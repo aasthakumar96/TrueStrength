@@ -1,18 +1,20 @@
 import type { MuscleGroup } from '../types';
 
+// Muted, dark-warm-friendly muscle group colors
+// Each group uses a very dark tinted bg with matching muted text
 export const MUSCLE_COLORS: Record<MuscleGroup, string> = {
-  chest: 'bg-rose-900 text-rose-300',
-  back: 'bg-blue-900 text-blue-300',
-  shoulders: 'bg-purple-900 text-purple-300',
-  biceps: 'bg-orange-900 text-orange-300',
-  triceps: 'bg-yellow-900 text-yellow-300',
-  forearms: 'bg-amber-900 text-amber-300',
-  quads: 'bg-green-900 text-green-300',
-  hamstrings: 'bg-teal-900 text-teal-300',
-  glutes: 'bg-pink-900 text-pink-300',
-  calves: 'bg-cyan-900 text-cyan-300',
-  core: 'bg-indigo-900 text-indigo-300',
-  cardio: 'bg-red-900 text-red-300',
+  chest:      'bg-rose-950/70 text-rose-400 border border-rose-900/40',
+  back:       'bg-sky-950/70 text-sky-400 border border-sky-900/40',
+  shoulders:  'bg-violet-950/70 text-violet-400 border border-violet-900/40',
+  biceps:     'bg-orange-950/70 text-orange-400 border border-orange-900/40',
+  triceps:    'bg-amber-950/70 text-amber-400 border border-amber-900/40',
+  forearms:   'bg-yellow-950/70 text-yellow-500 border border-yellow-900/40',
+  quads:      'bg-emerald-950/70 text-emerald-400 border border-emerald-900/40',
+  hamstrings: 'bg-teal-950/70 text-teal-400 border border-teal-900/40',
+  glutes:     'bg-fuchsia-950/70 text-fuchsia-400 border border-fuchsia-900/40',
+  calves:     'bg-cyan-950/70 text-cyan-400 border border-cyan-900/40',
+  core:       'bg-indigo-950/70 text-indigo-400 border border-indigo-900/40',
+  cardio:     'bg-red-950/70 text-red-400 border border-red-900/40',
 };
 
 export const MUSCLE_LABELS: Record<MuscleGroup, string> = {
@@ -58,4 +60,11 @@ export function getTodayDayOfWeek(): number {
   // 0 = Monday
   const d = new Date().getDay();
   return d === 0 ? 6 : d - 1;
+}
+
+export function getGreeting(): string {
+  const h = new Date().getHours();
+  if (h < 12) return 'Good morning';
+  if (h < 17) return 'Good afternoon';
+  return 'Good evening';
 }

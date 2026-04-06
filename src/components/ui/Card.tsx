@@ -11,7 +11,11 @@ export function Card({ children, className = '', onClick, interactive }: CardPro
   return (
     <div
       onClick={onClick}
-      className={`bg-surface-2 rounded-2xl ${interactive ? 'cursor-pointer hover:bg-slate-700 active:scale-98 transition-all' : ''} ${className}`}
+      className={`bg-surface-2 rounded-card border border-border ${
+        interactive
+          ? 'pressable hover:border-border-light hover:bg-surface-3 cursor-pointer'
+          : ''
+      } ${className}`}
     >
       {children}
     </div>

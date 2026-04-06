@@ -17,9 +17,13 @@ export function SetTracker({ totalSets, completedSets, onCompleteSet, onRemoveSe
 
   const handleComplete = (setNumber: number) => {
     if (completedNumbers.has(setNumber)) {
+      // Haptic: vibrate([30]) on deselect
+      if ('vibrate' in navigator) navigator.vibrate(20);
       onRemoveSet(setNumber);
       return;
     }
+    // Haptic: vibrate([30]) on set log
+    if ('vibrate' in navigator) navigator.vibrate(30);
     onCompleteSet({
       setNumber,
       repsCompleted: parseInt(reps) || 0,
@@ -29,45 +33,67 @@ export function SetTracker({ totalSets, completedSets, onCompleteSet, onRemoveSe
   };
 
   return (
-    <div className="space-y-3">
-      <div className="flex gap-2">
-        <div className="flex-1">
-          <label className="text-xs text-text-secondary mb-1 block">Weight (kg)</label>
+    <div className="space-y-4">
+      {/* Weight + Reps inputs */}
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label className="text-fluid-xs text-text-3 uppercase tracking-widest mb-2 block font-medium">
+            Weight (kg)
+          </label>
           <input
             type="number"
+            inputMode="decimal"
             value={weight}
             onChange={e => setWeight(e.target.value)}
-            placeholder="0"
-            className="w-full bg-slate-700 text-text-primary rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-primary"
+            placeholder="—"
+            className="w-full bg-surface-3 border border-border text-text-1 rounded-btn px-4 py-3 text-fluid-lg font-semibold text-center focus:outline-none focus:border-accent/60 focus:bg-surface-4 transition-colors placeholder:text-text-3"
           />
         </div>
-        <div className="flex-1">
-          <label className="text-xs text-text-secondary mb-1 block">Reps</label>
+        <div>
+          <label className="text-fluid-xs text-text-3 uppercase tracking-widest mb-2 block font-medium">
+            Reps
+          </label>
           <input
             type="number"
+            inputMode="numeric"
             value={reps}
             onChange={e => setReps(e.target.value)}
-            placeholder="0"
-            className="w-full bg-slate-700 text-text-primary rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-primary"
+            placeholder="—"
+            className="w-full bg-surface-3 border border-border text-text-1 rounded-btn px-4 py-3 text-fluid-lg font-semibold text-center focus:outline-none focus:border-accent/60 focus:bg-surface-4 transition-colors placeholder:text-text-3"
           />
         </div>
       </div>
 
+      {/* Set buttons */}
       <div className="grid grid-cols-4 gap-2">
         {Array.from({ length: totalSets }, (_, i) => i + 1).map(setNum => {
           const done = completedNumbers.has(setNum);
+          const setData = completedSets.find(s => s.setNumber === setNum);
           return (
             <button
               key={setNum}
               onClick={() => handleComplete(setNum)}
-              className={`h-14 rounded-xl font-bold text-lg transition-all active:scale-95 flex flex-col items-center justify-center gap-0.5 ${
+              className={`h-16 rounded-btn flex flex-col items-center justify-center gap-0.5 pressable border transition-colors ${
                 done
-                  ? 'bg-success text-white'
-                  : 'bg-slate-700 text-text-secondary hover:bg-slate-600'
+                  ? 'bg-accent/15 border-accent/40 text-accent'
+                  : 'bg-surface-3 border-border text-text-2 hover:border-border-light hover:text-text-1'
               }`}
             >
-              {done ? <Check size={20} /> : <span className="text-sm text-text-secondary">Set</span>}
-              <span className={done ? 'text-xs' : 'text-lg font-mono'}>{setNum}</span>
+              {done ? (
+                <>
+                  <Check size={16} strokeWidth={2.5} />
+                  {setData?.weightKg && (
+                    <span className="text-fluid-xs font-medium opacity-75">
+                      {setData.weightKg}kg
+                    </span>
+                  )}
+                </>
+              ) : (
+                <>
+                  <span className="text-fluid-xs text-text-3 uppercase tracking-wider">Set</span>
+                  <span className="text-fluid-base font-semibold">{setNum}</span>
+                </>
+              )}
             </button>
           );
         })}

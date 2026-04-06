@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Timer, X } from 'lucide-react';
-import { formatDuration } from '../../utils';
 
 interface RestTimerProps {
   seconds: number;
@@ -17,7 +15,7 @@ export function RestTimer({ seconds, onComplete, onDismiss }: RestTimerProps) {
       setRemaining(r => {
         if (r <= 1) {
           clearInterval(intervalRef.current);
-          // vibrate if supported
+          // Haptic: rest complete pattern
           if ('vibrate' in navigator) navigator.vibrate([200, 100, 200]);
           onComplete?.();
           return 0;
@@ -28,28 +26,56 @@ export function RestTimer({ seconds, onComplete, onDismiss }: RestTimerProps) {
     return () => clearInterval(intervalRef.current);
   }, []);
 
-  const progress = ((seconds - remaining) / seconds) * 100;
+  // SVG circular progress ring
+  const radius = 48;
+  const circumference = 2 * Math.PI * radius;
+  // Starts full, drains to empty
+  const strokeDashoffset = circumference * (1 - remaining / seconds);
 
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-2xl p-4">
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2 text-warning">
-          <Timer size={18} />
-          <span className="font-semibold text-sm">Rest Timer</span>
+    <div className="flex flex-col items-center py-6 px-4 bg-surface-2 rounded-card border border-border">
+      <p className="text-fluid-xs text-text-3 uppercase tracking-widest font-semibold mb-5">
+        Rest
+      </p>
+
+      {/* Circular ring */}
+      <div className="relative w-32 h-32">
+        <svg className="w-full h-full" style={{ transform: 'rotate(-90deg)' }} viewBox="0 0 110 110">
+          {/* Track */}
+          <circle
+            cx="55" cy="55" r={radius}
+            fill="none"
+            stroke="var(--border-light)"
+            strokeWidth="3"
+          />
+          {/* Progress — gold arc, drains as time passes */}
+          <circle
+            cx="55" cy="55" r={radius}
+            fill="none"
+            stroke="var(--accent)"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            style={{ transition: 'stroke-dashoffset 0.95s linear' }}
+          />
+        </svg>
+        {/* Time label */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <span className="font-display text-fluid-2xl font-semibold text-text-1 leading-none">
+            {remaining}
+          </span>
+          <span className="text-fluid-xs text-text-3 mt-1 uppercase tracking-widest">sec</span>
         </div>
-        <button onClick={onDismiss} className="text-text-secondary hover:text-text-primary">
-          <X size={18} />
-        </button>
       </div>
-      <div className="text-center mb-3">
-        <span className="font-mono font-bold text-4xl text-warning">{formatDuration(remaining)}</span>
-      </div>
-      <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-warning rounded-full transition-all duration-1000"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
+
+      {/* Skip button */}
+      <button
+        onClick={onDismiss}
+        className="mt-5 text-fluid-sm text-text-2 hover:text-text-1 pressable py-2 px-5 rounded-pill border border-border hover:border-border-light transition-colors"
+      >
+        Skip rest
+      </button>
     </div>
   );
 }

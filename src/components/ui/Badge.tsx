@@ -9,10 +9,12 @@ interface BadgeProps {
 
 export function MuscleBadge({ muscle, label, className = '' }: BadgeProps) {
   if (!muscle && !label) return null;
-  const color = muscle ? MUSCLE_COLORS[muscle] : 'bg-slate-700 text-slate-300';
+  const color = muscle ? MUSCLE_COLORS[muscle] : 'bg-surface-3 text-text-2 border border-border';
   const text = label || (muscle ? MUSCLE_LABELS[muscle] : '');
   return (
-    <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${color} ${className}`}>
+    <span
+      className={`inline-block px-2 py-0.5 rounded-pill text-fluid-xs font-semibold tracking-wide ${color} ${className}`}
+    >
       {text}
     </span>
   );
@@ -23,13 +25,15 @@ interface DifficultyBadgeProps {
 }
 
 export function DifficultyBadge({ difficulty }: DifficultyBadgeProps) {
-  const colors = {
-    beginner: 'bg-green-900 text-green-300',
-    intermediate: 'bg-yellow-900 text-yellow-300',
-    advanced: 'bg-red-900 text-red-300',
+  const styles = {
+    beginner:     'bg-emerald-950/70 text-emerald-400 border border-emerald-900/40',
+    intermediate: 'bg-amber-950/70 text-amber-400 border border-amber-900/40',
+    advanced:     'bg-rose-950/70 text-rose-400 border border-rose-900/40',
   };
   return (
-    <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${colors[difficulty]}`}>
+    <span
+      className={`inline-block px-2 py-0.5 rounded-pill text-fluid-xs font-semibold tracking-wide ${styles[difficulty]}`}
+    >
       {difficulty}
     </span>
   );

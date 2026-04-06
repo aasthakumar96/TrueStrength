@@ -1,0 +1,556 @@
+[
+  {
+    "id": "barbell-bench-press",
+    "name": "Barbell Bench Press",
+    "primaryMuscle": "chest",
+    "secondaryMuscles": ["triceps", "shoulders"],
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "category": "compound",
+    "defaultSets": 4,
+    "defaultReps": "6-8",
+    "restSeconds": 120,
+    "instructions": [
+      "Lie flat on the bench with your eyes under the bar. Grip the bar slightly wider than shoulder-width.",
+      "Unrack the bar and hold it directly over your chest with arms fully extended.",
+      "Lower the bar in a controlled arc to your mid-chest, keeping elbows at roughly 60 degrees from your torso.",
+      "Press the bar back up explosively, fully extending your arms.",
+      "Re-rack the bar after completing all reps."
+    ],
+    "tips": [
+      "Retract and depress your shoulder blades into the bench to create a stable base.",
+      "Keep your feet flat on the floor and drive through them for full-body tension.",
+      "A slight natural arch in the lower back is fine — avoid exaggerating it."
+    ],
+    "tags": ["chest", "push", "upper-body", "mass-builder", "powerlifting"]
+  },
+  {
+    "id": "incline-dumbbell-press",
+    "name": "Incline Dumbbell Press",
+    "primaryMuscle": "chest",
+    "secondaryMuscles": ["triceps", "shoulders"],
+    "equipment": "dumbbell",
+    "difficulty": "beginner",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "8-12",
+    "restSeconds": 90,
+    "instructions": [
+      "Set a bench to 30–45 degrees incline. Sit with a dumbbell on each knee, then kick them up as you lie back.",
+      "Hold the dumbbells at shoulder width with palms facing forward, elbows at about 60 degrees from your sides.",
+      "Lower the dumbbells slowly until they reach chest level and you feel a stretch across the upper chest.",
+      "Press back up in a slight arc, bringing them close together at the top without touching.",
+      "Lower with control for each repetition."
+    ],
+    "tips": [
+      "Focus on squeezing the upper chest at the top rather than just locking out the arms.",
+      "A 30-degree incline targets upper chest more effectively than a steeper angle."
+    ],
+    "tags": ["upper-chest", "push", "dumbbell", "hypertrophy"]
+  },
+  {
+    "id": "cable-chest-fly",
+    "name": "Cable Chest Fly",
+    "primaryMuscle": "chest",
+    "secondaryMuscles": ["shoulders"],
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "12-15",
+    "restSeconds": 60,
+    "instructions": [
+      "Set both cable pulleys to chest height. Stand in the center with one handle in each hand.",
+      "Step slightly forward into a staggered stance and lean forward a few degrees from the hips.",
+      "With a slight bend in your elbows, bring both handles together in front of your chest in a hugging arc.",
+      "Squeeze the chest hard at the peak contraction for one second.",
+      "Slowly return to the start position, feeling a full stretch across the chest."
+    ],
+    "tips": [
+      "Keep the same elbow bend throughout — do not press or extend the arms.",
+      "Cables maintain constant tension through the full range of motion."
+    ],
+    "tags": ["chest", "isolation", "cable", "stretch", "hypertrophy"]
+  },
+  {
+    "id": "close-grip-bench-press",
+    "name": "Close-Grip Bench Press",
+    "primaryMuscle": "triceps",
+    "secondaryMuscles": ["chest", "shoulders"],
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "8-10",
+    "restSeconds": 90,
+    "instructions": [
+      "Lie on a flat bench and grip the barbell with hands shoulder-width apart or slightly narrower.",
+      "Unrack the bar and hold it over your lower chest with arms fully extended.",
+      "Lower the bar to your lower chest, keeping elbows tucked close to your sides throughout.",
+      "Press the bar back up in a straight line, fully extending your arms.",
+      "Squeeze the triceps hard at the top of each rep."
+    ],
+    "tips": [
+      "Do not go too narrow — shoulder-width is ideal to avoid wrist strain.",
+      "Keeping elbows tucked (not flared) shifts emphasis from chest to triceps."
+    ],
+    "tags": ["triceps", "chest", "compound", "push", "barbell"]
+  },
+  {
+    "id": "tricep-cable-pushdown",
+    "name": "Tricep Cable Pushdown",
+    "primaryMuscle": "triceps",
+    "secondaryMuscles": [],
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "12-15",
+    "restSeconds": 60,
+    "instructions": [
+      "Attach a bar or rope to a high pulley cable. Stand facing the machine, feet hip-width apart.",
+      "Grip the attachment with an overhand grip. Keep your elbows pinned to your sides throughout.",
+      "Push the bar down until your arms are fully extended, squeezing the triceps at the bottom.",
+      "Slowly allow the weight to return until your forearms are parallel to the floor.",
+      "Repeat without letting your elbows drift forward."
+    ],
+    "tips": [
+      "A rope attachment allows wrist rotation at the bottom for a greater muscle squeeze.",
+      "Lean slightly forward from the hips to help keep elbows locked in position."
+    ],
+    "tags": ["triceps", "isolation", "cable", "lateral-head", "beginner-friendly"]
+  },
+  {
+    "id": "overhead-tricep-extension",
+    "name": "Overhead Tricep Extension",
+    "primaryMuscle": "triceps",
+    "secondaryMuscles": [],
+    "equipment": "dumbbell",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "10-12",
+    "restSeconds": 60,
+    "instructions": [
+      "Sit on a bench with back support. Hold one dumbbell with both hands, cupping the top plate.",
+      "Press the dumbbell overhead so your arms are fully extended.",
+      "Keeping your upper arms stationary and elbows pointing straight up, lower the dumbbell behind your head.",
+      "Lower until your forearms go past parallel, feeling a deep stretch in the long head of the tricep.",
+      "Press back to full extension by contracting the triceps."
+    ],
+    "tips": [
+      "The overhead position maximally stretches the long head of the tricep — the largest portion.",
+      "Keep your core braced and avoid arching your lower back as you press overhead."
+    ],
+    "tags": ["triceps", "long-head", "isolation", "overhead", "dumbbell"]
+  },
+  {
+    "id": "barbell-bent-over-row",
+    "name": "Barbell Bent-Over Row",
+    "primaryMuscle": "back",
+    "secondaryMuscles": ["biceps", "core", "shoulders"],
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "category": "compound",
+    "defaultSets": 4,
+    "defaultReps": "6-8",
+    "restSeconds": 120,
+    "instructions": [
+      "Stand with feet hip-width apart. Hinge at the hips until your torso is at about 45 degrees, keeping a neutral spine.",
+      "Grip the bar just outside shoulder-width with an overhand grip. Let it hang at arm's length.",
+      "Drive your elbows back and up, pulling the bar into your lower ribcage.",
+      "Squeeze your shoulder blades together hard at the top for one second.",
+      "Lower the bar with control back to the starting position."
+    ],
+    "tips": [
+      "Maintain a braced core and neutral lower back throughout — rounding under load risks injury.",
+      "Pull with your elbows, not your hands, to better engage the lats over the biceps."
+    ],
+    "tags": ["back", "compound", "pull", "barbell", "mass-builder", "posterior-chain"]
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Lat Pulldown",
+    "primaryMuscle": "back",
+    "secondaryMuscles": ["biceps", "shoulders"],
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "10-12",
+    "restSeconds": 90,
+    "instructions": [
+      "Sit at a lat pulldown machine and secure your thighs under the pads. Grip the bar wider than shoulder-width.",
+      "Lean back slightly and depress your shoulder blades before initiating the pull.",
+      "Pull the bar down toward your upper chest, leading with your elbows and driving them toward your hips.",
+      "Squeeze the lats at the bottom when the bar reaches your chest.",
+      "Slowly extend your arms back overhead, achieving a full stretch before the next rep."
+    ],
+    "tips": [
+      "Avoid using momentum or shrugging the shoulders — keep it controlled.",
+      "A slight lean back (15–20 degrees) allows for a better range of motion."
+    ],
+    "tags": ["lats", "back", "compound", "cable", "pull", "width"]
+  },
+  {
+    "id": "single-arm-dumbbell-row",
+    "name": "Single-Arm Dumbbell Row",
+    "primaryMuscle": "back",
+    "secondaryMuscles": ["biceps", "core"],
+    "equipment": "dumbbell",
+    "difficulty": "beginner",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "10-12",
+    "restSeconds": 75,
+    "instructions": [
+      "Place one hand and the same-side knee on a flat bench for support. Hold a dumbbell in the opposite hand.",
+      "Let the dumbbell hang at arm's length directly below your shoulder, with a neutral spine.",
+      "Row the dumbbell up toward your hip, driving your elbow back and keeping it close to your body.",
+      "At the top, squeeze the lat and upper back for a full contraction.",
+      "Lower slowly to full arm extension and repeat."
+    ],
+    "tips": [
+      "Allow your shoulder blade to protract at the bottom and retract fully at the top for maximum range.",
+      "You can go heavier here than many back exercises — use a challenging weight without compromising form."
+    ],
+    "tags": ["back", "unilateral", "dumbbell", "lats", "rhomboids"]
+  },
+  {
+    "id": "seated-cable-row",
+    "name": "Seated Cable Row",
+    "primaryMuscle": "back",
+    "secondaryMuscles": ["biceps", "shoulders"],
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "10-12",
+    "restSeconds": 90,
+    "instructions": [
+      "Sit at the cable row station and place your feet on the platform with a slight bend in the knees.",
+      "Grip the close-grip handle with a neutral (palms facing each other) grip.",
+      "Sit upright with a neutral spine. Pull the handle to your lower ribcage by driving your elbows back.",
+      "Squeeze your shoulder blades together at full contraction and hold for one second.",
+      "Return the handle forward with control, allowing your shoulder blades to fully protract."
+    ],
+    "tips": [
+      "Avoid rocking your torso backward — this uses momentum rather than muscle.",
+      "Think about pulling your elbows through the wall behind you to engage the mid-back."
+    ],
+    "tags": ["back", "mid-back", "rhomboids", "cable", "thickness"]
+  },
+  {
+    "id": "barbell-curl",
+    "name": "Barbell Curl",
+    "primaryMuscle": "biceps",
+    "secondaryMuscles": ["forearms"],
+    "equipment": "barbell",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "10-12",
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with feet hip-width apart, holding a barbell with an underhand grip at shoulder width.",
+      "Keep your elbows pinned at your sides and your upper arms stationary throughout.",
+      "Curl the barbell up by contracting the biceps, bringing the bar to shoulder level.",
+      "Squeeze the biceps hard at the top, then lower with control through the full range of motion.",
+      "Do not let momentum swing the bar — keep the movement strict."
+    ],
+    "tips": [
+      "A barbell allows you to handle more weight than dumbbells, making it ideal for progressive overload.",
+      "An EZ-bar can substitute to reduce wrist discomfort while still targeting the biceps."
+    ],
+    "tags": ["biceps", "isolation", "barbell", "mass-builder", "arms"]
+  },
+  {
+    "id": "hammer-curl",
+    "name": "Hammer Curl",
+    "primaryMuscle": "biceps",
+    "secondaryMuscles": ["forearms"],
+    "equipment": "dumbbell",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "12-15",
+    "restSeconds": 60,
+    "instructions": [
+      "Stand or sit holding a dumbbell in each hand with a neutral grip (palms facing your torso).",
+      "Keep elbows close to your sides and upper arms stationary.",
+      "Curl both dumbbells up simultaneously, keeping the neutral grip throughout.",
+      "Bring the dumbbells to shoulder height and squeeze at the top.",
+      "Lower with control back to full extension."
+    ],
+    "tips": [
+      "The neutral grip shifts emphasis to the brachialis, adding thickness to the arm.",
+      "Alternate arms if you prefer — alternating allows a slight rotation for a longer range."
+    ],
+    "tags": ["biceps", "brachialis", "forearms", "dumbbell", "neutral-grip"]
+  },
+  {
+    "id": "barbell-back-squat",
+    "name": "Barbell Back Squat",
+    "primaryMuscle": "quads",
+    "secondaryMuscles": ["glutes", "hamstrings", "core", "calves"],
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "category": "compound",
+    "defaultSets": 4,
+    "defaultReps": "6-8",
+    "restSeconds": 180,
+    "instructions": [
+      "Set the barbell on a squat rack at upper-chest height. Position the bar across your upper traps.",
+      "Grip the bar slightly wider than shoulder-width, step back, and stand with feet shoulder-width apart, toes slightly turned out.",
+      "Brace your core, take a deep breath, and descend by breaking at the hips and knees simultaneously.",
+      "Squat until your thighs are at least parallel to the floor, keeping your chest up and knees tracking over your toes.",
+      "Drive through the entire foot to stand back up, extending hips and knees together."
+    ],
+    "tips": [
+      "Depth is critical — squatting to parallel or below ensures proper glute and hamstring engagement.",
+      "Keep your weight balanced across the whole foot, not just the heels or toes.",
+      "Record yourself from the side to check form at the bottom."
+    ],
+    "tags": ["quads", "glutes", "compound", "legs", "barbell", "powerlifting", "mass-builder"]
+  },
+  {
+    "id": "romanian-deadlift",
+    "name": "Romanian Deadlift",
+    "primaryMuscle": "hamstrings",
+    "secondaryMuscles": ["glutes", "back", "core"],
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "8-10",
+    "restSeconds": 120,
+    "instructions": [
+      "Stand holding a barbell at hip level with an overhand grip, feet hip-width apart.",
+      "Keeping a slight bend in your knees and your back flat, hinge forward at the hips by pushing them back.",
+      "Lower the bar along your legs until you feel a significant stretch in your hamstrings.",
+      "Drive your hips forward to return to standing, squeezing your glutes at the top.",
+      "Do not allow your lower back to round at any point."
+    ],
+    "tips": [
+      "Think of it as a hip hinge, not a squat — your knees should barely move.",
+      "The bar should stay very close to your legs throughout the entire movement."
+    ],
+    "tags": ["hamstrings", "glutes", "posterior-chain", "hip-hinge", "barbell"]
+  },
+  {
+    "id": "barbell-hip-thrust",
+    "name": "Barbell Hip Thrust",
+    "primaryMuscle": "glutes",
+    "secondaryMuscles": ["hamstrings", "core"],
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "category": "compound",
+    "defaultSets": 4,
+    "defaultReps": "10-12",
+    "restSeconds": 90,
+    "instructions": [
+      "Sit on the floor with your upper back against a flat bench. Roll a barbell over your hips (use a pad for comfort).",
+      "Plant your feet flat on the floor, about hip-width apart with knees bent at roughly 90 degrees.",
+      "Drive through your heels and upper back to push your hips toward the ceiling.",
+      "At the top, your torso should be parallel to the floor with a strong glute squeeze. Hold for one second.",
+      "Lower your hips back down under control without letting them touch the floor between reps."
+    ],
+    "tips": [
+      "The hip thrust produces the highest glute activation of any exercise.",
+      "Tuck your chin slightly and keep your ribs down to avoid hyperextending the lower back at the top."
+    ],
+    "tags": ["glutes", "hip-thrust", "compound", "barbell", "posterior-chain"]
+  },
+  {
+    "id": "leg-press",
+    "name": "Leg Press",
+    "primaryMuscle": "quads",
+    "secondaryMuscles": ["glutes", "hamstrings", "calves"],
+    "equipment": "machine",
+    "difficulty": "beginner",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "10-15",
+    "restSeconds": 90,
+    "instructions": [
+      "Sit in the leg press machine with your lower back flat against the pad. Place feet hip-width apart in the middle of the platform.",
+      "Release the safety handles and lower the platform by bending your knees toward your chest.",
+      "Descend until your knees form a 90-degree angle or your thighs reach your chest.",
+      "Press the platform back up by extending your knees and hips, without fully locking out.",
+      "Control the descent on every rep."
+    ],
+    "tips": [
+      "Placing your feet higher on the platform shifts more load to the glutes and hamstrings.",
+      "Never allow your lower back to peel off the pad at the bottom — reduce range of motion if this occurs."
+    ],
+    "tags": ["quads", "legs", "machine", "compound", "volume"]
+  },
+  {
+    "id": "walking-lunge",
+    "name": "Dumbbell Walking Lunge",
+    "primaryMuscle": "quads",
+    "secondaryMuscles": ["glutes", "hamstrings", "calves", "core"],
+    "equipment": "dumbbell",
+    "difficulty": "beginner",
+    "category": "compound",
+    "defaultSets": 3,
+    "defaultReps": "12-14",
+    "restSeconds": 75,
+    "instructions": [
+      "Stand upright holding a dumbbell in each hand at your sides.",
+      "Step forward with one foot and lower your body until your front thigh is parallel to the floor.",
+      "Your back knee should hover just above the ground. Keep your torso upright.",
+      "Push off the front foot to bring the back foot forward, stepping into the next lunge.",
+      "Continue alternating legs for the prescribed number of steps per leg."
+    ],
+    "tips": [
+      "Take a long enough stride so your front knee does not drift past your toes.",
+      "For more glute emphasis take longer strides; for more quad emphasis take shorter strides."
+    ],
+    "tags": ["quads", "glutes", "unilateral", "dumbbell", "balance", "functional"]
+  },
+  {
+    "id": "seated-leg-curl",
+    "name": "Seated Leg Curl",
+    "primaryMuscle": "hamstrings",
+    "secondaryMuscles": ["calves"],
+    "equipment": "machine",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "12-15",
+    "restSeconds": 60,
+    "instructions": [
+      "Sit in the leg curl machine and adjust the pad so it rests just above your heels.",
+      "Grip the handles and keep your back flat against the seat.",
+      "Curl your heels down and back toward the seat by contracting your hamstrings.",
+      "Squeeze the hamstrings hard at the peak contraction.",
+      "Slowly extend back to the starting position under full control."
+    ],
+    "tips": [
+      "The seated position places the hamstrings under tension at a longer length, advantageous for hypertrophy.",
+      "Avoid letting the weight stack touch between reps to keep constant tension."
+    ],
+    "tags": ["hamstrings", "isolation", "machine", "legs"]
+  },
+  {
+    "id": "barbell-overhead-press",
+    "name": "Barbell Overhead Press",
+    "primaryMuscle": "shoulders",
+    "secondaryMuscles": ["triceps", "core"],
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "category": "compound",
+    "defaultSets": 4,
+    "defaultReps": "6-8",
+    "restSeconds": 120,
+    "instructions": [
+      "Set a barbell in a rack at upper-chest height. Grip the bar just outside shoulder-width with an overhand grip.",
+      "Unrack the bar and hold it at shoulder level with your elbows slightly in front of the bar.",
+      "Brace your core and press the bar straight overhead until your arms are fully locked out.",
+      "As the bar passes your face, move your head slightly back, then re-engage under the bar at the top.",
+      "Lower the bar under control back to the shoulders and repeat."
+    ],
+    "tips": [
+      "Squeeze your glutes and brace your core to prevent lower back hyperextension.",
+      "The bar should travel in a nearly straight vertical line."
+    ],
+    "tags": ["shoulders", "compound", "overhead", "barbell", "anterior-delt", "strength"]
+  },
+  {
+    "id": "dumbbell-lateral-raise",
+    "name": "Dumbbell Lateral Raise",
+    "primaryMuscle": "shoulders",
+    "secondaryMuscles": [],
+    "equipment": "dumbbell",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 4,
+    "defaultReps": "15-20",
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with a dumbbell in each hand at your sides, with a slight bend in your elbows.",
+      "Raise both arms out to the sides simultaneously, leading with your elbows, until your arms are parallel to the floor.",
+      "At the top, your pinkies should be slightly higher than your thumbs.",
+      "Hold for a brief squeeze at the top, then lower slowly and with control.",
+      "Do not allow momentum or body swing — keep the movement strict."
+    ],
+    "tips": [
+      "Lateral raises are essential for shoulder width — they cannot be replaced by pressing movements.",
+      "Go lighter than you think — strict form for high reps is far more effective than heavy with momentum."
+    ],
+    "tags": ["lateral-delt", "shoulders", "isolation", "dumbbell", "width", "hypertrophy"]
+  },
+  {
+    "id": "cable-face-pull",
+    "name": "Cable Face Pull",
+    "primaryMuscle": "shoulders",
+    "secondaryMuscles": ["back", "biceps"],
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "15-20",
+    "restSeconds": 60,
+    "instructions": [
+      "Set a rope attachment on a high pulley. Stand facing the machine and grip the rope ends with both hands.",
+      "Step back a few feet so there is tension on the cable. Stand with feet shoulder-width apart.",
+      "Pull the rope toward your face, separating the rope ends as you pull so they come to either side of your head.",
+      "Focus on driving your elbows back and squeezing your rear delts and upper traps at full contraction.",
+      "Slowly return the rope to the starting position with control."
+    ],
+    "tips": [
+      "Face pulls target the rear delts and external rotators, which are critical for shoulder health.",
+      "Aim for higher rep ranges (15–20) with lighter weight to focus on the mind-muscle connection."
+    ],
+    "tags": ["rear-delt", "shoulders", "shoulder-health", "cable", "rotator-cuff"]
+  },
+  {
+    "id": "ez-bar-curl",
+    "name": "EZ-Bar Curl",
+    "primaryMuscle": "biceps",
+    "secondaryMuscles": ["forearms"],
+    "equipment": "ez-bar",
+    "difficulty": "beginner",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "10-12",
+    "restSeconds": 60,
+    "instructions": [
+      "Stand holding an EZ-bar with a shoulder-width underhand grip on the angled inner grips.",
+      "Keep your elbows pinned to your sides and stand upright with a neutral spine.",
+      "Curl the bar up toward your shoulders by contracting your biceps.",
+      "Squeeze the biceps hard at the top, with the bar at shoulder height.",
+      "Lower the bar with control back to full arm extension."
+    ],
+    "tips": [
+      "The angled grips reduce wrist and elbow stress compared to a straight barbell.",
+      "Control the eccentric (lowering) phase — a 2–3 second lower increases time under tension."
+    ],
+    "tags": ["biceps", "isolation", "ez-bar", "arms", "mass-builder"]
+  },
+  {
+    "id": "skull-crusher",
+    "name": "Skull Crusher",
+    "primaryMuscle": "triceps",
+    "secondaryMuscles": [],
+    "equipment": "ez-bar",
+    "difficulty": "intermediate",
+    "category": "isolation",
+    "defaultSets": 3,
+    "defaultReps": "10-12",
+    "restSeconds": 75,
+    "instructions": [
+      "Lie on a flat bench holding an EZ-bar with an overhand grip, arms extended directly above your chest.",
+      "Keeping your upper arms perpendicular to the floor and stationary, bend your elbows to lower the bar toward your forehead.",
+      "Stop just before the bar reaches your forehead and feel the stretch in the triceps.",
+      "Extend your elbows to press the bar back to the starting position.",
+      "Keep your elbows from flaring outward throughout."
+    ],
+    "tips": [
+      "An EZ-bar is preferred over a straight bar to reduce wrist stress.",
+      "Lowering slightly behind your head instead of to the forehead increases the long head stretch."
+    ],
+    "tags": ["triceps", "long-head", "isolation", "ez-bar", "lying", "arms"]
+  }
+]

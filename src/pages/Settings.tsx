@@ -5,7 +5,7 @@ import { Button } from '../components/ui/Button';
 import { usePlanStore } from '../stores/planStore';
 import { useSessionStore } from '../stores/sessionStore';
 import { db } from '../db';
-import { Pencil, Trash2, Info } from 'lucide-react';
+import { Pencil, Trash2, Shield } from 'lucide-react';
 
 export function Settings() {
   const navigate = useNavigate();
@@ -13,7 +13,9 @@ export function Settings() {
   const { clearSession } = useSessionStore();
 
   const handleReset = async () => {
-    if (!confirm('This will delete your plan and all history. Are you sure?')) return;
+    if (!confirm('This will permanently delete your plan and all workout history. Continue?')) return;
+    // Haptic: error pattern
+    if ('vibrate' in navigator) navigator.vibrate([50, 30, 50]);
     await db.plans.clear();
     await db.sessions.clear();
     clearSession();
@@ -24,34 +26,54 @@ export function Settings() {
   return (
     <AppShell>
       <Header title="Settings" />
-      <div className="p-4 space-y-4">
+
+      <div className="px-5 pt-4 space-y-3">
+        {/* Plan card */}
         {plan && (
-          <div className="bg-surface-2 rounded-2xl p-4">
-            <h3 className="font-semibold text-text-primary mb-1">{plan.name}</h3>
-            <p className="text-text-secondary text-sm mb-3">
-              {plan.days.length} training days · Currently on Week {plan.currentWeek}
+          <div className="bg-surface-2 rounded-card border border-border px-5 py-5">
+            <p className="text-fluid-xs text-text-3 uppercase tracking-widest font-semibold mb-3">
+              Your Plan
             </p>
-            <Button variant="secondary" onClick={() => navigate('/setup')}>
-              <Pencil size={16} /> Edit Plan
+            <h3 className="font-display text-fluid-xl text-text-1 font-semibold mb-1">
+              {plan.name}
+            </h3>
+            <p className="text-fluid-sm text-text-2 mb-4">
+              {plan.days.length} training days &nbsp;&middot;&nbsp; Week {plan.currentWeek} active
+            </p>
+            <Button variant="secondary" size="sm" onClick={() => navigate('/setup')}>
+              <Pencil size={15} strokeWidth={1.75} />
+              Edit Plan
             </Button>
           </div>
         )}
 
-        <div className="bg-surface-2 rounded-2xl p-4">
-          <div className="flex items-center gap-2 mb-3">
-            <Info size={16} className="text-text-secondary" />
-            <h3 className="font-semibold text-text-primary text-sm">About GymGuide</h3>
+        {/* About */}
+        <div className="bg-surface-2 rounded-card border border-border px-5 py-5">
+          <div className="flex items-center gap-2.5 mb-3">
+            <Shield size={16} className="text-text-3" strokeWidth={1.5} />
+            <p className="text-fluid-sm font-semibold text-text-1">Privacy</p>
           </div>
-          <p className="text-text-secondary text-sm">Your guided gym workout companion. All data is stored locally on your device — no account required.</p>
+          <p className="text-fluid-sm text-text-2 leading-relaxed">
+            All your data lives on this device. No account, no server, no tracking.
+          </p>
         </div>
 
-        <div className="bg-surface-2 rounded-2xl p-4">
-          <h3 className="font-semibold text-text-primary mb-1">Danger Zone</h3>
-          <p className="text-text-secondary text-sm mb-3">This will permanently delete your plan and workout history.</p>
-          <Button variant="danger" onClick={handleReset}>
-            <Trash2 size={16} /> Reset All Data
+        {/* Danger zone */}
+        <div className="bg-surface-2 rounded-card border border-danger/15 px-5 py-5">
+          <p className="text-fluid-xs text-danger/60 uppercase tracking-widest font-semibold mb-1">
+            Danger Zone
+          </p>
+          <p className="text-fluid-sm text-text-2 mb-4">
+            Permanently delete your plan and all workout history.
+          </p>
+          <Button variant="danger" size="sm" onClick={handleReset}>
+            <Trash2 size={15} strokeWidth={1.75} />
+            Reset All Data
           </Button>
         </div>
+
+        {/* Version */}
+        <p className="text-fluid-xs text-text-3 text-center py-2">GymGuide · All data stored locally</p>
       </div>
     </AppShell>
   );
