@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent: #C9A96E;
+    --accent-text: #E2C898;
+    --accent-muted: rgba(201, 169, 110, 0.12);
+    --surface-2: #1C1A17;
+    --border: #2A2725;
+    --border-light: #363129;
+    --text-1: #F0EAE0;
+    --text-2: #8A837A;
+    --text-3: #52504C;
+  }
+
+  html {
+    background-color: #0C0B09;
+    color: #F0EAE0;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #0C0B09;
+    /* 2% noise texture — applied only to the static background */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    overscroll-behavior-y: none;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Remove number input spinners */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  /* Keyboard-only focus ring */
+  :focus-visible {
+    outline: 2px solid #C9A96E;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer components {
+  /* Glass surface — for overlaying layers only (nav, sheets) */
+  .glass {
+    background: rgba(20, 18, 16, 0.78);
+    backdrop-filter: blur(20px) saturate(1.3);
+    -webkit-backdrop-filter: blur(20px) saturate(1.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-nav {
+    background: rgba(18, 16, 14, 0.88);
+    backdrop-filter: blur(24px) saturate(1.5);
+    -webkit-backdrop-filter: blur(24px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Skeleton shimmer loading state */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #1C1A17 0%,
+      #242118 45%,
+      #2C2920 55%,
+      #1C1A17 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+    border-radius: 8px;
+  }
+
+  /* Tappable press state — scale + opacity feedback */
+  .pressable {
+    transition: transform 120ms ease, opacity 120ms ease;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+  .pressable:active {
+    transform: scale(0.97);
+    opacity: 0.85;
+  }
+
+  /* Scroll containers with momentum */
+  .scroll-momentum {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Accent pill badge */
+  .badge-accent {
+    background: var(--accent-muted);
+    color: var(--accent-text);
+    font-size: clamp(0.6875rem, 2.8vw, 0.75rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 2px 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(201, 169, 110, 0.2);
+  }
+
+  /* Divider line */
+  .divider {
+    height: 1px;
+    background: var(--border);
+  }
+}
+
+@layer utilities {
+  /* Safe area padding */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 8px);
+  }
+  .pb-nav {
+    /* Space for floating nav bar (72px) + safe area */
+    padding-bottom: max(calc(env(safe-area-inset-bottom, 0px) + 88px), 96px);
+  }
+
+  /* Fluid type scale — mobile-first, scales 390px → 768px */
+  .text-fluid-xs      { font-size: clamp(0.6875rem, 2.8vw, 0.8125rem);  line-height: 1.4; }
+  .text-fluid-sm      { font-size: clamp(0.8125rem, 3.3vw, 0.9375rem);  line-height: 1.5; }
+  .text-fluid-base    { font-size: clamp(0.9375rem, 3.8vw, 1rem);       line-height: 1.6; }
+  .text-fluid-lg      { font-size: clamp(1.0625rem, 4.3vw, 1.1875rem);  line-height: 1.5; }
+  .text-fluid-xl      { font-size: clamp(1.25rem,   5vw,   1.375rem);   line-height: 1.4; }
+  .text-fluid-2xl     { font-size: clamp(1.5rem,    6vw,   1.75rem);    line-height: 1.25; }
+  .text-fluid-display { font-size: clamp(1.875rem,  8vw,   2.5rem);     line-height: 1.1; }
+
+  /* Haptic hint comments — fire navigator.vibrate() at these points:
+     - Set logged: vibrate([30])
+     - Rest timer complete: vibrate([200, 100, 200])
+     - Workout complete: vibrate([100, 50, 100, 50, 200])
+     - Error/invalid: vibrate([50, 30, 50])
+  */
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0);    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
